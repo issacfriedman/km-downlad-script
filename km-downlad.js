@@ -30,10 +30,5 @@ function downloadBlob(blob, name = "km-download.mp3") {
   const download = document.querySelector(`.new-player${downloadId}`);
   const downloadUrl = download.dataset.songUrl;
   
-
-
-//   fetch("https://drive.google.com/uc?export=download&id=10QAcJFDmM174JFTAc56i_ERuypXjsERZ")
-//   .then((response) => response.text())
-//   .then((text) => eval(text))
-  
+  fetch(downloadUrl).then((res) => res.blob().then((res) => downloadBlob(res)));
   
